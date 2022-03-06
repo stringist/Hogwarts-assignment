@@ -1,0 +1,390 @@
+@font-face {
+    font-family: "parry hotter";
+    src: url("./fonts/ParryHotter-LOZ.ttf");
+}
+
+@font-face {
+    font-family: "lumos";
+    src: url("./fonts/LUMOS.TTF");
+    src: url("./fonts/")
+}
+
+@font-face {
+    font-family: "ovation";
+    src: url("./fonts/Ovation.ttf");
+}
+
+@font-face {
+    font-family: "albus";
+    src: url("./fonts/HanryPotterDemoRegular.ttf");
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap'); */
+
+@font-face {
+    font-family: "adobe-handwriting-frank";
+    src: url("https://use.typekit.net/af/db9a43/00000000000000007735b5fe/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/db9a43/00000000000000007735b5fe/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/db9a43/00000000000000007735b5fe/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+:root {
+    --darkred: rgb(26, 0, 0);
+    --medred: rgb(152, 0, 0);
+    --headline: "parry hotter";
+    --accent: "lumos";
+    --cursive: "ovation";
+    --altcursive: "albus";
+    --handwrite: "adobe-handwriting-frank", sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url("./assets/parchment2.png");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--darkred);
+}
+
+h1 {
+    font-family: var(--headline);
+    text-align: center;
+    font-size: 2.5rem;
+    padding: auto;
+}
+
+h2 {
+    font-family: var(--cursive);
+    font-size: 2rem;
+}
+
+th {
+    font-family: var(--headline);
+    font-size: 2rem;
+    /* text-align: center; */
+}
+
+table {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    font-family: var(--headline);
+    font-size: 1.5rem;
+    /* columns: 2; */
+    columns: 2;
+    margin: 2rem auto 4rem auto;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul>li>span {
+    font-family: var(--cursive);
+    font-size: 2.5rem;
+    padding-top: 0;
+}
+
+label {
+    font-size: .8rem;
+}
+
+select {
+    font-family: var(--headline);
+    background-color: unset;
+    border: solid .51px var(--darkred);
+    border-width: 3px 3px 3px 4px;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: rotate(2deg);
+    padding: .5rem;
+}
+
+option {
+    background-color: unset;
+}
+
+button {
+    font-family: var(--headline);
+    font-size: 1.2rem;
+    background-color: unset;
+    padding: .5rem;
+    border: solid .51px var(--darkred);
+    border-width: 5px 3px 3px 5px;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: rotate(2deg);
+    cursor: pointer;
+}
+
+[data-action],
+[data-field=name] {
+    cursor: pointer;
+}
+
+[data-field=name] {
+    text-align: left;
+    padding-left: 5%;
+}
+
+td {
+    font-family: var(--cursive);
+    font-size: 3.5rem;
+    /* border-bottom: solid .5px black; */
+    /* border-radius: 0 0 5px 5px; */
+    text-align: center;
+}
+
+#sorting th.sortby[data-sort-direction="asc"]::after {
+    content: "▼";
+}
+
+#sorting th.sortby[data-sort-direction="desc"]::after {
+    content: "▲"
+}
+
+#nametoggle {
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+#housesDrop {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.parchment_background {
+    background-image: url("./assets/parchment2.png");
+}
+
+.shadeOut {
+    filter: grayscale(80%) brightness(20%);
+}
+
+.blood_container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+
+.big_blood_container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    /* margin: auto; */
+}
+
+.full_blood {
+    background-image: url("./assets/SVG/full_blood.svg");
+}
+
+.half_blood {
+    background-image: url("./assets/SVG/half_blood.svg");
+}
+
+.muggle_blood {
+    background-image: url("./assets/SVG/muggle_blood.svg");
+}
+
+.prefect_container {
+    background-image: url("./assets/SVG/prefect_unselected.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.big_prefect_container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+}
+
+.prefect_unselected {
+    background-image: url("./assets/SVG/prefect_unselected.svg");
+}
+
+.prefect_selected {
+    background-image: url("./assets/SVG/prefect_icon.svg")
+}
+
+.squad_container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.big_squad_container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+}
+
+.squad_selected {
+    background-image: url("./assets/SVG/squad_icon.svg");
+}
+
+.squad_unselected {
+    background-image: url("./assets/SVG/squad_unselected_2.svg");
+}
+
+.odd {
+    border-width: 3px 2px 5px 5px;
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+}
+
+.closebutton {
+    border-width: 3px 3px 5px 5px;
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-3deg);
+}
+
+#sorting {
+    /* display: flex; */
+    min-width: 100%;
+    /* justify-content: space-around; */
+    border-bottom: solid 1px var(--darkred);
+    border-width: 2px;
+    border-radius: 4% 95% 6% 95%/95% 4% 5%;
+    transform: rotate(-.5deg);
+}
+
+.modal,
+.modalcontent,
+.dialog {
+    max-width: 100%;
+    /* text-align: center; */
+}
+
+.dialog h1 {
+    font-family: var(--cursive);
+    font-size: 3rem;
+}
+
+.dialog,
+div.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-image: url("./assets/parchment2.png");
+    background-size: contain;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+tbody #currentStudents {
+    border-bottom: solid 1px black;
+}
+
+.expelled_list [data-field=name] {
+    color: rgb(169, 0, 0);
+    text-decoration: line-through;
+}
+
+[data-field=expelled] {
+    color: rgb(169, 0, 0);
+}
+
+.hacked {
+    filter: invert();
+    background-image: url(./assets/parchment_inverted.png);
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    margin: 0;
+}
+
+.footer-wrapper {
+    min-width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.counters {
+    width: 100%;
+    font-family: var(--headline);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+    margin-top: auto;
+    border-top: solid 1px black;
+}
+
+footer ul {
+    font-family: var(--cursive);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+footer ul>* {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    margin-bottom: .5rem;
+}
+
+footer ul div {
+    margin: auto 0 auto 0;
+}
+
+footer ul div span {
+    font-size: 4rem;
+}
+
+.infoCard {
+    height: 12rem;
+    width: 25rem;
+    /* position: relative; */
+    margin-right: 0;
+    border-left: solid 1px black;
+    border-top: solid 1px black;
+}
